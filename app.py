@@ -309,4 +309,13 @@ with gr.Blocks(title="BPM PERU DJ - Universal Media & Karaoke") as interfaz:
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 7860))
-    interfaz.launch(server_name="0.0.0.0", server_port=port, theme=gr.themes.Base(), css=css_personalizado)
+    interfaz.launch(
+        server_name="0.0.0.0", 
+        server_port=port, 
+        theme=gr.themes.Base(), 
+        css=css_personalizado,
+        auth=[
+            ("Eleazar", "73091076"),   # Tu usuario de administrador
+            ("Invitado", "2026")           # Usuario para tus amigos o clientes
+        ]
+    )
