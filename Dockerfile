@@ -8,11 +8,10 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Instalar librerías de Python
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Instalar todas las librerías de IA y web directamente
+RUN pip install --no-cache-dir gradio torch torchaudio demucs openai-whisper numpy
 
-# Copiar el proyecto
+# Copiar el resto del proyecto
 COPY . .
 
 EXPOSE 7860
